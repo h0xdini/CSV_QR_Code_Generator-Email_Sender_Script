@@ -68,15 +68,15 @@ const send = async(email, url) => {
                 })
             }
         
-            fs.writeFile('data.json', JSON.stringify(jsonData), (err) => {
-                if (err) {
-                    console.error(err);
-                    return;
-                }
-            })
+            if (filteredItems.length < acceptedEmails) {
+                fs.writeFile('data.json', JSON.stringify(jsonData), (err) => {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+                })
+            }
         })
-
-        console.log('Sent successfully!')
     } catch(error) {
         console.log(error)
     }
