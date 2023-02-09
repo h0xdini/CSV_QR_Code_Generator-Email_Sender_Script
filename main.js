@@ -75,6 +75,9 @@ const send = async(email, url) => {
                         return;
                     }
                 })
+            } else {
+                console.log('Done...')
+                return
             }
         })
     } catch(error) {
