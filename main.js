@@ -68,7 +68,7 @@ const send = async(email, url) => {
                 })
             }
         
-            if (filteredItems.length < acceptedEmails) {
+            if (jsonData.length <= acceptedEmails) {
                 fs.writeFile('data.json', JSON.stringify(jsonData), (err) => {
                     if (err) {
                         console.error(err);
